@@ -1,0 +1,27 @@
+package main
+
+import (
+	"github.com/connectors-api/mcp-server/config"
+	"github.com/connectors-api/mcp-server/models"
+	tools_projects "github.com/connectors-api/mcp-server/tools/projects"
+)
+
+func GetAll(cfg *config.APIConfig) []models.Tool {
+	return []models.Tool{
+		tools_projects.CreateConnectors_projects_locations_connections_checkreadinessTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_checkstatusTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_entitytypes_entities_updateentitieswithconditionsTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_exchangeauthcodeTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_entitytypes_listTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_entitytypes_entities_deleteentitieswithconditionsTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_entitytypes_entities_deleteTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_entitytypes_entities_getTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_entitytypes_entities_patchTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_actions_listTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_actions_executeTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_refreshaccesstokenTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_entitytypes_entities_listTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_entitytypes_entities_createTool(cfg),
+		tools_projects.CreateConnectors_projects_locations_connections_executesqlqueryTool(cfg),
+	}
+}
